@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LionBars simple demo</title>
+	<link href="../src/lionbars.css" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="../src/jquery.lionbars.0.4.js"></script>
+
+	<style>
+		body {
+			background: #123;
+		}
+		h1,h2,h3 {
+			color: #369;
+		}
+		.wrapper {
+			width: 400px;
+			padding: 20px;
+			margin: 0 auto;
+			background: #fff;
+			box-shadow: 0 0 10px #000;
+		}
+		.block-with-lionbars {
+			height: 600px;
+			overflow: auto;
+		}
+		.lb-v-scrollbar-slider,
+		.lb-h-scrollbar-slider {
+			background: #369;
+		}
+	</style>
+	<script>
+		$(function() {
+			$(".block-with-lionbars").lionbars();
+		});
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Demo !</h1>
+		<div class="block-with-lionbars">
+			<p>GitHub is a web-based hosting service for software development projects that use the Git revision control system. GitHub offers both commercial plans and free accounts for open source projects. According to the Git User's Survey in 2009, GitHub is the most popular Git hosting site.[3]</p>
+
+			<h2>Description</h2>
+			<p>The site provides social networking functionality such as feeds, followers and the network graph to display how developers work on their versions of a repository.</p>
+			<p>GitHub also operates a pastebin-style site called Gist,[4] wikis for individual repositories, and web pages that can be edited through a Git repository.</p>
+			<p>As of January 2010, GitHub is operated under the name GitHub, Inc.[5]</p>
+			<p>The software that runs GitHub was written using Ruby on Rails and Erlang by GitHub, Inc. (previously known as Logical Awesome) developers Chris Wanstrath,[6] PJ Hyett, and Tom Preston-Werner.<p>
+
+			<h2>Statistics</h2>
+			<p>GitHub was launched in April 2008.[1]</p>
+			<p>In a talk at Yahoo! headquarters on 24 February 2009, GitHub team members announced that during the first year that GitHub was online, it accumulated 46,000 public repositories, 17,000 of them in the previous month alone. At that time, about 6,200 repositories had been forked at least once and 4,600 merged. On 5 July 2009, a Github Blog post announced they reached the 100,000 users mark.[7]</p>
+			<p>In another talk delivered at Yahoo! on 27 July 2009, Tom Preston-Werner announced that the numbers had risen to 90,000 unique public repositories, 12,000 having been forked at least once, for a total of 135,000 repositories.[8] In July 2010, GitHub announced that it hosts 1 million repositories.[9] In April 2011, Github announced that it is hosting 2 million repositories. [10]</p>
+			<p>On 21 September 2011, GitHub announced it had reached over 1 million users.[11]
+			Bandwidth usage limitation</p>
+			<p>According to the terms of service[12] if your bandwidth usage significantly exceeds the average bandwidth usage of other GitHub customers, they reserve the right to immediately disable your account or throttle your file hosting until you can reduce your bandwidth consumption.</p>
+		</div>
+	</div>
+</body>
+</html>
