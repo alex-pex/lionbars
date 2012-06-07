@@ -1,0 +1,38 @@
+.lb-v-dummy { width: 100%; display: block; height: 1px; }
+.lb-h-dummy { height: 100%; display: block; width: 1px; }
+.lb-clear { clear: both; }
+.lb-wrap { z-index: 0; overflow: auto; position: relative; }
+/*.lb-scrollbar-wrap { position: absolute; left: 0; top: 0; }*/
+.lb-v-scrollbar { z-index: 1; position: absolute; right: 2px; top: 2px; width: 7px; height: 100%; background: #D6D6D6; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; }
+.lb-h-scrollbar { z-index: 1; position: absolute; bottom: 2px; left: 2px; width: 100%; height: 7px; background: #D6D6D6; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; }
+.lb-v-scrollbar-slider { position: absolute; width: 7px; height: 50px; left: 0; top: 0; background: #005274; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; }
+.lb-h-scrollbar-slider { position: absolute; height: 7px; width: 50px; left: 0; top: 0; background: #005274; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px; }
+
+.lb-v-scrollbar,
+.lb-h-scrollbar {
+    box-shadow: inset 0 0 0 1px #CDCDCD;
+}
+
+.lb-v-scrollbar-slider,
+.lb-h-scrollbar-slider {
+    background-image: linear-gradient(bottom, rgb(0,62,82) 0%, rgb(0,114,176) 100%);
+    background-image: -o-linear-gradient(bottom, rgb(0,62,82) 0%, rgb(0,114,176) 100%);
+    background-image: -moz-linear-gradient(bottom, rgb(0,62,82) 0%, rgb(0,114,176) 100%);
+    background-image: -webkit-linear-gradient(bottom, rgb(0,62,82) 0%, rgb(0,114,176) 100%);
+    background-image: -ms-linear-gradient(bottom, rgb(0,62,82) 0%, rgb(0,114,176) 100%);
+    
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(0,62,82)),
+        color-stop(1, rgb(0,114,176))
+    );
+}
+
+.lb-v-scrollbar-slider:hover {
+    cursor: n-resize;
+}
+.lb-h-scrollbar-slider:hover {
+    cursor: w-resize;
+}
