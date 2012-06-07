@@ -9,11 +9,11 @@ How to use
  - include css et js files
  - simply use lionbars method on the div(s) you want
 
-ex:
-
+Example :
+```javascript
 $(function() {
   $('.overflowed').lionbars();
 });
-
+```
  - that's it !
 
