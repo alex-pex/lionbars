@@ -1,11 +1,7 @@
-(function( $ ) {
-  $.fn.hasScrollBar = function() {
-    return this.get(0).scrollHeight > this.height();
-  };
-  
-  $.fn.lionbars = function(options) {
-    options = options || {};
-    autohide = options.autohide;
+(function($) {
+  $.fn.lionbars = function(args) {
+    var options = $.extend({}, $.fn.lionbars.defaults, args); 
+    var autohide = options.autohide;
     
     return this.each(function() {
       
@@ -41,16 +37,16 @@
       
       // Core functions
       function init() {
-        // try to remove existing lionbars
-        removeScrollbars(target);
-        
         // stop here if element is hidden
         if (!$(target).is(':visible')) return;
+
+        // try to remove existing lionbars
+        removeScrollbars(target);
         
         // prepare for next element
         //resetVars();
         
-        if (needScrollbars(target) && !$(target).hasClass('nolionbars')) {
+        if (needScrollbars(target)) {
           // get some values before the element is wrapped
           getDimensions(target);
           
@@ -94,21 +90,23 @@
       
       function removeScrollbars(elem) {
         var el = $(elem);
-        var $lbContent = el.find('> .lb-wrap > .lb-content');
-        
-        if ($lbContent.length > 0) {
-          el.find('> .lb-v-scrollbar, > .lb-h-scrollbar').remove();
-          el.find('> .lb-wrap').replaceWith($lbContent.children());
+
+        // if there is neither vratio nor hratio attributes, there is no lionbars
+        // store inline style attribute for further purpose
+        if (el.attr('vratio') == undefined && el.attr('hratio') == undefined) {
+          el.data('style', el.attr('style'));
         }
+        // else, remove lionbars and restore original DOM element
+        else {
+          el.removeAttr('vratio').removeAttr('hratio');
+          el.attr('style', el.data('style'));
           
-        el.removeAttr('vratio').removeAttr('hratio');
-        el.css({
-          'overflow': '',
-          'padding': '',
-          'width': '',
-          'height': '',
-          'position': ''
-        });
+          var $lbContent = el.find('> .lb-wrap > .lb-content');
+          if ($lbContent.length > 0) {
+            el.find('> .lb-v-scrollbar, > .lb-h-scrollbar').remove();
+            el.find('> .lb-wrap').replaceWith($lbContent.children());
+          }
+        }
       }
       
       function setEvents(elem) {
@@ -440,4 +438,14 @@
       }
     });
   };
+  
+  /**
+   * default configuration properties
+   */
+  $.fn.lionbars.defaults = {
+    //height: null,
+    //width: null,
+    autohide: false
+  };
+  
 })( jQuery );
